@@ -36,9 +36,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <segue destination="8tR-U7-87t" kind="presentation" id="JV1-BN-jdC"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sOn-tM-lpb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

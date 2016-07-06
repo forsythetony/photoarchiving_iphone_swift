@@ -14,6 +14,7 @@ public class TFUserManager {
     static let sharedInstance = TFUserManager()
     
     public var userInformation = UserInformation()
+    public var loginInformation = LoginInformation()
     
     
     init()
@@ -30,6 +31,8 @@ public class TFUserManager {
         self.userInformation.userName = "forsythetony"
         self.userInformation.authKey = "DXQ4kGBH9b5hoT1IMZxpqai9RosriN7WLX05DCMNNS4bM6Uy5rYvCgEtE7VXV2TG"
         self.userInformation.userID = "1"
+        
+        self.loginInformation.isLoggedIn = true;
     }
     
     
@@ -40,5 +43,10 @@ public class TFUserManager {
         public var authKey : String?
         public var userID : String?
         
+    }
+    
+    public struct LoginInformation {
+        
+        public var isLoggedIn : Bool?
     }
 }
