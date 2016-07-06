@@ -12,6 +12,7 @@
 		2523B93B1D2D2098007B9936 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2523B93A1D2D2098007B9936 /* Photos.swift */; };
 		2524210B1D2DC7D000157321 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524210A1D2DC7D000157321 /* HomeViewController.swift */; };
 		2524210D1D2DC7E000157321 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524210C1D2DC7E000157321 /* LoginViewController.swift */; };
+		252421111D2DC86C00157321 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252421101D2DC86C00157321 /* UserManager.swift */; };
 		2584944E1D2CD4D60036A892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2584944D1D2CD4D60036A892 /* AppDelegate.swift */; };
 		258494501D2CD4D60036A892 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2584944F1D2CD4D60036A892 /* ViewController.swift */; };
 		258494531D2CD4D60036A892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 258494511D2CD4D60036A892 /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		2523B93A1D2D2098007B9936 /* Photos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		2524210A1D2DC7D000157321 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2524210C1D2DC7E000157321 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		252421101D2DC86C00157321 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		2584944A1D2CD4D60036A892 /* Photoarchiving_v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photoarchiving_v2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2584944D1D2CD4D60036A892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2584944F1D2CD4D60036A892 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,23 @@
 			name = "Home View Controller";
 			sourceTree = "<group>";
 		};
+		2524210E1D2DC85300157321 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				2524210F1D2DC85C00157321 /* User */,
+				2523B9361D2D1FCB007B9936 /* Networking */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		2524210F1D2DC85C00157321 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				252421101D2DC86C00157321 /* UserManager.swift */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
 		258494411D2CD4D60036A892 = {
 			isa = PBXGroup;
 			children = (
@@ -183,9 +202,9 @@
 		2584944C1D2CD4D60036A892 /* Photoarchiving_v2 */ = {
 			isa = PBXGroup;
 			children = (
+				2524210E1D2DC85300157321 /* Managers */,
 				252421081D2DC7B900157321 /* View Controllers */,
 				2523B9391D2D2092007B9936 /* Photos */,
-				2523B9361D2D1FCB007B9936 /* Networking */,
 				2523B9351D2D1FB0007B9936 /* Timeline */,
 				258494821D2D03110036A892 /* Helpers */,
 				2584944D1D2CD4D60036A892 /* AppDelegate.swift */,
@@ -435,6 +454,7 @@
 				2524210D1D2DC7E000157321 /* LoginViewController.swift in Sources */,
 				258494501D2CD4D60036A892 /* ViewController.swift in Sources */,
 				258494811D2D02730036A892 /* Colors.swift in Sources */,
+				252421111D2DC86C00157321 /* UserManager.swift in Sources */,
 				258494841D2D03C10036A892 /* Globals.swift in Sources */,
 				258494861D2D04170036A892 /* TextDisplay.swift in Sources */,
 				258494881D2D056C0036A892 /* Views.swift in Sources */,
