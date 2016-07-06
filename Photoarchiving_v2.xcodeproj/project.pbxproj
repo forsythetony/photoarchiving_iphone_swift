@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2523B9341D2D0E79007B9936 /* TFTimelineScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2523B9331D2D0E79007B9936 /* TFTimelineScrollView.swift */; };
+		2523B9381D2D1FDC007B9936 /* TFDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2523B9371D2D1FDC007B9936 /* TFDataManager.swift */; };
+		2523B93B1D2D2098007B9936 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2523B93A1D2D2098007B9936 /* Photos.swift */; };
 		2584944E1D2CD4D60036A892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2584944D1D2CD4D60036A892 /* AppDelegate.swift */; };
 		258494501D2CD4D60036A892 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2584944F1D2CD4D60036A892 /* ViewController.swift */; };
 		258494531D2CD4D60036A892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 258494511D2CD4D60036A892 /* Main.storyboard */; };
@@ -15,6 +18,16 @@
 		2584945B1D2CD4D60036A892 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 258494591D2CD4D60036A892 /* LaunchScreen.storyboard */; };
 		258494661D2CD4D60036A892 /* Photoarchiving_v2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258494651D2CD4D60036A892 /* Photoarchiving_v2Tests.swift */; };
 		258494711D2CD4D60036A892 /* Photoarchiving_v2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258494701D2CD4D60036A892 /* Photoarchiving_v2UITests.swift */; };
+		2584947F1D2CF3990036A892 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2584947E1D2CF3990036A892 /* Helpers.swift */; };
+		258494811D2D02730036A892 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258494801D2D02730036A892 /* Colors.swift */; };
+		258494841D2D03C10036A892 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258494831D2D03C10036A892 /* Globals.swift */; };
+		258494861D2D04170036A892 /* TextDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258494851D2D04170036A892 /* TextDisplay.swift */; };
+		258494881D2D056C0036A892 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258494871D2D056C0036A892 /* Views.swift */; };
+		25F25FF51D2D242E006A417E /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25F25FF41D2D242E006A417E /* Media.xcassets */; };
+		25F25FF71D2D2875006A417E /* TFPhotoThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F25FF61D2D2875006A417E /* TFPhotoThumbView.swift */; };
+		25F25FF91D2D3A7F006A417E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F25FF81D2D3A7F006A417E /* AVFoundation.framework */; };
+		25F25FFD1D2D3AA1006A417E /* AudioRecorderTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F25FFC1D2D3AA1006A417E /* AudioRecorderTestViewController.swift */; };
+		BFAB8BE00DD9FCD62286D4BE /* Pods_Photoarchiving_v2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D23620A948DE80C202842D31 /* Pods_Photoarchiving_v2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2523B9331D2D0E79007B9936 /* TFTimelineScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFTimelineScrollView.swift; sourceTree = "<group>"; };
+		2523B9371D2D1FDC007B9936 /* TFDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFDataManager.swift; sourceTree = "<group>"; };
+		2523B93A1D2D2098007B9936 /* Photos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		2584944A1D2CD4D60036A892 /* Photoarchiving_v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photoarchiving_v2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2584944D1D2CD4D60036A892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2584944F1D2CD4D60036A892 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +65,18 @@
 		2584946C1D2CD4D60036A892 /* Photoarchiving_v2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Photoarchiving_v2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		258494701D2CD4D60036A892 /* Photoarchiving_v2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photoarchiving_v2UITests.swift; sourceTree = "<group>"; };
 		258494721D2CD4D60036A892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2584947E1D2CF3990036A892 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		258494801D2D02730036A892 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		258494831D2D03C10036A892 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		258494851D2D04170036A892 /* TextDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDisplay.swift; sourceTree = "<group>"; };
+		258494871D2D056C0036A892 /* Views.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
+		25F25FF41D2D242E006A417E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		25F25FF61D2D2875006A417E /* TFPhotoThumbView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFPhotoThumbView.swift; sourceTree = "<group>"; };
+		25F25FF81D2D3A7F006A417E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		25F25FFC1D2D3AA1006A417E /* AudioRecorderTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecorderTestViewController.swift; sourceTree = "<group>"; };
+		4C27B89B1F3081BCD9C8239C /* Pods-Photoarchiving_v2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photoarchiving_v2.release.xcconfig"; path = "Pods/Target Support Files/Pods-Photoarchiving_v2/Pods-Photoarchiving_v2.release.xcconfig"; sourceTree = "<group>"; };
+		709568E51A06F6352FBADACA /* Pods-Photoarchiving_v2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photoarchiving_v2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Photoarchiving_v2/Pods-Photoarchiving_v2.debug.xcconfig"; sourceTree = "<group>"; };
+		D23620A948DE80C202842D31 /* Pods_Photoarchiving_v2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Photoarchiving_v2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25F25FF91D2D3A7F006A417E /* AVFoundation.framework in Frameworks */,
+				BFAB8BE00DD9FCD62286D4BE /* Pods_Photoarchiving_v2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +106,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2523B9351D2D1FB0007B9936 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				2523B9331D2D0E79007B9936 /* TFTimelineScrollView.swift */,
+			);
+			name = Timeline;
+			sourceTree = "<group>";
+		};
+		2523B9361D2D1FCB007B9936 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2523B9371D2D1FDC007B9936 /* TFDataManager.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		2523B9391D2D2092007B9936 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				2523B93A1D2D2098007B9936 /* Photos.swift */,
+				25F25FF61D2D2875006A417E /* TFPhotoThumbView.swift */,
+			);
+			name = Photos;
+			sourceTree = "<group>";
+		};
 		258494411D2CD4D60036A892 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +138,8 @@
 				258494641D2CD4D60036A892 /* Photoarchiving_v2Tests */,
 				2584946F1D2CD4D60036A892 /* Photoarchiving_v2UITests */,
 				2584944B1D2CD4D60036A892 /* Products */,
+				A613C66858889385081F764B /* Pods */,
+				FA02B09A340975E38A2816C4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +156,10 @@
 		2584944C1D2CD4D60036A892 /* Photoarchiving_v2 */ = {
 			isa = PBXGroup;
 			children = (
+				2523B9391D2D2092007B9936 /* Photos */,
+				2523B9361D2D1FCB007B9936 /* Networking */,
+				2523B9351D2D1FB0007B9936 /* Timeline */,
+				258494821D2D03110036A892 /* Helpers */,
 				2584944D1D2CD4D60036A892 /* AppDelegate.swift */,
 				2584944F1D2CD4D60036A892 /* ViewController.swift */,
 				258494511D2CD4D60036A892 /* Main.storyboard */,
@@ -106,6 +167,8 @@
 				258494591D2CD4D60036A892 /* LaunchScreen.storyboard */,
 				2584945C1D2CD4D60036A892 /* Info.plist */,
 				258494541D2CD4D60036A892 /* Photoarchiving_v2.xcdatamodeld */,
+				25F25FF41D2D242E006A417E /* Media.xcassets */,
+				25F25FFC1D2D3AA1006A417E /* AudioRecorderTestViewController.swift */,
 			);
 			path = Photoarchiving_v2;
 			sourceTree = "<group>";
@@ -128,6 +191,36 @@
 			path = Photoarchiving_v2UITests;
 			sourceTree = "<group>";
 		};
+		258494821D2D03110036A892 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2584947E1D2CF3990036A892 /* Helpers.swift */,
+				258494801D2D02730036A892 /* Colors.swift */,
+				258494831D2D03C10036A892 /* Globals.swift */,
+				258494851D2D04170036A892 /* TextDisplay.swift */,
+				258494871D2D056C0036A892 /* Views.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		A613C66858889385081F764B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				709568E51A06F6352FBADACA /* Pods-Photoarchiving_v2.debug.xcconfig */,
+				4C27B89B1F3081BCD9C8239C /* Pods-Photoarchiving_v2.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FA02B09A340975E38A2816C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				25F25FF81D2D3A7F006A417E /* AVFoundation.framework */,
+				D23620A948DE80C202842D31 /* Pods_Photoarchiving_v2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +228,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 258494751D2CD4D60036A892 /* Build configuration list for PBXNativeTarget "Photoarchiving_v2" */;
 			buildPhases = (
+				F879AB3362E9FF8E82EED279 /* Check Pods Manifest.lock */,
 				258494461D2CD4D60036A892 /* Sources */,
 				258494471D2CD4D60036A892 /* Frameworks */,
 				258494481D2CD4D60036A892 /* Resources */,
+				01E665CFCE19B3C5A32A8B68 /* Embed Pods Frameworks */,
+				FF93E2318115D7112A2EBC57 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -196,6 +292,7 @@
 				TargetAttributes = {
 					258494491D2CD4D60036A892 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = CB6W4HNRCM;
 					};
 					258494601D2CD4D60036A892 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -234,6 +331,7 @@
 			files = (
 				2584945B1D2CD4D60036A892 /* LaunchScreen.storyboard in Resources */,
 				258494581D2CD4D60036A892 /* Assets.xcassets in Resources */,
+				25F25FF51D2D242E006A417E /* Media.xcassets in Resources */,
 				258494531D2CD4D60036A892 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,14 +352,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		01E665CFCE19B3C5A32A8B68 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Photoarchiving_v2/Pods-Photoarchiving_v2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F879AB3362E9FF8E82EED279 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FF93E2318115D7112A2EBC57 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Photoarchiving_v2/Pods-Photoarchiving_v2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		258494461D2CD4D60036A892 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				258494501D2CD4D60036A892 /* ViewController.swift in Sources */,
+				258494811D2D02730036A892 /* Colors.swift in Sources */,
+				258494841D2D03C10036A892 /* Globals.swift in Sources */,
+				258494861D2D04170036A892 /* TextDisplay.swift in Sources */,
+				258494881D2D056C0036A892 /* Views.swift in Sources */,
+				2523B93B1D2D2098007B9936 /* Photos.swift in Sources */,
 				2584944E1D2CD4D60036A892 /* AppDelegate.swift in Sources */,
+				2523B9341D2D0E79007B9936 /* TFTimelineScrollView.swift in Sources */,
+				25F25FF71D2D2875006A417E /* TFPhotoThumbView.swift in Sources */,
+				25F25FFD1D2D3AA1006A417E /* AudioRecorderTestViewController.swift in Sources */,
+				2523B9381D2D1FDC007B9936 /* TFDataManager.swift in Sources */,
 				258494561D2CD4D60036A892 /* Photoarchiving_v2.xcdatamodeld in Sources */,
+				2584947F1D2CF3990036A892 /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,28 +557,37 @@
 		};
 		258494761D2CD4D60036A892 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 709568E51A06F6352FBADACA /* Pods-Photoarchiving_v2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Photoarchiving_v2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tony.Photoarchiving-v2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		258494771D2CD4D60036A892 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C27B89B1F3081BCD9C8239C /* Pods-Photoarchiving_v2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Photoarchiving_v2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tony.Photoarchiving-v2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
 		258494791D2CD4D60036A892 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 709568E51A06F6352FBADACA /* Pods-Photoarchiving_v2.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = Photoarchiving_v2Tests/Info.plist;
@@ -435,6 +600,7 @@
 		};
 		2584947A1D2CD4D60036A892 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C27B89B1F3081BCD9C8239C /* Pods-Photoarchiving_v2.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = Photoarchiving_v2Tests/Info.plist;
@@ -486,6 +652,7 @@
 				258494771D2CD4D60036A892 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		258494781D2CD4D60036A892 /* Build configuration list for PBXNativeTarget "Photoarchiving_v2Tests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +661,7 @@
 				2584947A1D2CD4D60036A892 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2584947B1D2CD4D60036A892 /* Build configuration list for PBXNativeTarget "Photoarchiving_v2UITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +670,7 @@
 				2584947D1D2CD4D60036A892 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
