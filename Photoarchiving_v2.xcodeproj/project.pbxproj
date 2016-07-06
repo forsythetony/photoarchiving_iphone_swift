@@ -10,6 +10,8 @@
 		2523B9341D2D0E79007B9936 /* TFTimelineScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2523B9331D2D0E79007B9936 /* TFTimelineScrollView.swift */; };
 		2523B9381D2D1FDC007B9936 /* TFDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2523B9371D2D1FDC007B9936 /* TFDataManager.swift */; };
 		2523B93B1D2D2098007B9936 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2523B93A1D2D2098007B9936 /* Photos.swift */; };
+		2524210B1D2DC7D000157321 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524210A1D2DC7D000157321 /* HomeViewController.swift */; };
+		2524210D1D2DC7E000157321 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524210C1D2DC7E000157321 /* LoginViewController.swift */; };
 		2584944E1D2CD4D60036A892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2584944D1D2CD4D60036A892 /* AppDelegate.swift */; };
 		258494501D2CD4D60036A892 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2584944F1D2CD4D60036A892 /* ViewController.swift */; };
 		258494531D2CD4D60036A892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 258494511D2CD4D60036A892 /* Main.storyboard */; };
@@ -50,6 +52,8 @@
 		2523B9331D2D0E79007B9936 /* TFTimelineScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFTimelineScrollView.swift; sourceTree = "<group>"; };
 		2523B9371D2D1FDC007B9936 /* TFDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFDataManager.swift; sourceTree = "<group>"; };
 		2523B93A1D2D2098007B9936 /* Photos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
+		2524210A1D2DC7D000157321 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2524210C1D2DC7E000157321 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2584944A1D2CD4D60036A892 /* Photoarchiving_v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photoarchiving_v2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2584944D1D2CD4D60036A892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2584944F1D2CD4D60036A892 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -132,8 +136,26 @@
 		252421071D2DC78C00157321 /* Login View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2524210C1D2DC7E000157321 /* LoginViewController.swift */,
 			);
 			name = "Login View Controller";
+			sourceTree = "<group>";
+		};
+		252421081D2DC7B900157321 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				252421091D2DC7C000157321 /* Home View Controller */,
+				252421071D2DC78C00157321 /* Login View Controller */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		252421091D2DC7C000157321 /* Home View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2524210A1D2DC7D000157321 /* HomeViewController.swift */,
+			);
+			name = "Home View Controller";
 			sourceTree = "<group>";
 		};
 		258494411D2CD4D60036A892 = {
@@ -161,7 +183,7 @@
 		2584944C1D2CD4D60036A892 /* Photoarchiving_v2 */ = {
 			isa = PBXGroup;
 			children = (
-				252421071D2DC78C00157321 /* Login View Controller */,
+				252421081D2DC7B900157321 /* View Controllers */,
 				2523B9391D2D2092007B9936 /* Photos */,
 				2523B9361D2D1FCB007B9936 /* Networking */,
 				2523B9351D2D1FB0007B9936 /* Timeline */,
@@ -410,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2524210D1D2DC7E000157321 /* LoginViewController.swift in Sources */,
 				258494501D2CD4D60036A892 /* ViewController.swift in Sources */,
 				258494811D2D02730036A892 /* Colors.swift in Sources */,
 				258494841D2D03C10036A892 /* Globals.swift in Sources */,
@@ -421,6 +444,7 @@
 				25F25FF71D2D2875006A417E /* TFPhotoThumbView.swift in Sources */,
 				2523B9381D2D1FDC007B9936 /* TFDataManager.swift in Sources */,
 				258494561D2CD4D60036A892 /* Photoarchiving_v2.xcdatamodeld in Sources */,
+				2524210B1D2DC7D000157321 /* HomeViewController.swift in Sources */,
 				2584947F1D2CF3990036A892 /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
