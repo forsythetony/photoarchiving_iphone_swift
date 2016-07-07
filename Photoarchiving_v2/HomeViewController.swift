@@ -15,6 +15,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     private lazy var userMan = TFUserManager.sharedInstance
     private lazy var dataMan = TFDataManager.sharedInstance
     
+    private var didLoadPhotos = false
+    
     var repos : [TFRepository] = [TFRepository]()
     
     override func viewDidLoad() {
@@ -47,36 +49,40 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else
         {
-            
-            self.dataMan.getRepositoriesForUser("1", completion: { (result, error) in
-                
-                if(error == nil)
-                {
+            if(!self.didLoadPhotos)
+            {
+                self.dataMan.getRepositoriesForUser("1", completion: { (result, error) in
                     
-                    dispatch_async(dispatch_get_main_queue(), { 
-                        self.reposTblView.beginUpdates()
+                    if(error == nil)
+                    {
                         
-                        let startIndexPath : Int = self.repos.count
+                        dispatch_async(dispatch_get_main_queue(), { 
+                            self.reposTblView.beginUpdates()
+                            
+                            let startIndexPath : Int = self.repos.count
+                            
+                            var indexPaths = [NSIndexPath]()
+                            
+                            for i in 0...((result?.count)! - 1)
+                            {
+                                let newIndexPath = NSIndexPath(forRow: i + startIndexPath, inSection: 0)
+                                indexPaths.append(newIndexPath)
+                            }
+                            
+                            self.repos.appendContentsOf(result!)
+                            
+                            self.reposTblView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Fade)
+                            
+                            self.reposTblView.endUpdates()
+                            
+                            self.didLoadPhotos = true;
+                        })
                         
-                        var indexPaths = [NSIndexPath]()
-                        
-                        for i in 0...((result?.count)! - 1)
-                        {
-                            let newIndexPath = NSIndexPath(forRow: i + startIndexPath, inSection: 0)
-                            indexPaths.append(newIndexPath)
-                        }
-                        
-                        self.repos.appendContentsOf(result!)
-                        
-                        self.reposTblView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Fade)
-                        
-                        self.reposTblView.endUpdates()
-                    })
+                    }
                     
-                }
-                
-                
-            })
+                    
+                })
+            }
             
         }
         
