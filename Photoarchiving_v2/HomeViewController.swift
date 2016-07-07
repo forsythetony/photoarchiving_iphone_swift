@@ -15,11 +15,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     private lazy var userMan = TFUserManager.sharedInstance
     private lazy var dataMan = TFDataManager.sharedInstance
     
-    private lazy var repos = [TFRepository]()
+    var repos : [TFRepository] = [TFRepository]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupTableView()
         
         
     }
@@ -53,9 +53,29 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 if(error == nil)
                 {
                     
-                    self.repos = result!
+                    dispatch_async(dispatch_get_main_queue(), { 
+                        self.reposTblView.beginUpdates()
+                        
+                        let startIndexPath : Int = self.repos.count
+                        
+                        var indexPaths = [NSIndexPath]()
+                        
+                        for i in 0...((result?.count)! - 1)
+                        {
+                            let newIndexPath = NSIndexPath(forRow: i + startIndexPath, inSection: 0)
+                            indexPaths.append(newIndexPath)
+                        }
+                        
+                        self.repos.appendContentsOf(result!)
+                        
+                        self.reposTblView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Fade)
+                        
+                        self.reposTblView.endUpdates()
+                    })
                     
                 }
+                
+                
             })
             
         }
@@ -89,7 +109,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let repoInfo = self.repos[indexPath.row]
         cell?.textLabel?.textColor = UIColor.blackColor()
-        cell?.textLabel?.text = "a;lskdjf;lkj"
+        cell.backgroundColor = UIColor.orangeColor()
+        cell?.textLabel?.text = repoInfo.title
         
         return cell
     }
