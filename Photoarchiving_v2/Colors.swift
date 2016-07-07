@@ -31,4 +31,8 @@ public extension Color {
     static func patternedTweed() -> Color {
         return UIColor(patternImage: UIImage(named: "tweed.png")!)
     }
+    
+    static func patternedOrchid() -> Color {
+        return UIColor(patternImage: UIImage(named: "orchid.png")!)
+    }
 }

@@ -20,6 +20,15 @@ public struct TFRepository {
     var photos : [TFPhoto] = [TFPhoto]()
 }
 
+public class TFStory : NSObject {
+    var story_id : String?
+    var title : String?
+    var desc : String?
+    var recURL : String?
+    var recordingText : String?
+    var dateUploaded : NSDate?
+    
+}
 public class TFPhoto : NSObject {
     
     var mainURL : String?

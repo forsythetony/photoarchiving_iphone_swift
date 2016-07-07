@@ -13,6 +13,8 @@
 		2524210B1D2DC7D000157321 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524210A1D2DC7D000157321 /* HomeViewController.swift */; };
 		2524210D1D2DC7E000157321 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524210C1D2DC7E000157321 /* LoginViewController.swift */; };
 		252421111D2DC86C00157321 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252421101D2DC86C00157321 /* UserManager.swift */; };
+		25396D2E1D2E0C0C0062DDA7 /* StoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25396D2D1D2E0C0C0062DDA7 /* StoriesCell.xib */; };
+		25396D301D2E0CD10062DDA7 /* StoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25396D2F1D2E0CD10062DDA7 /* StoriesTableViewCell.swift */; };
 		2584944E1D2CD4D60036A892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2584944D1D2CD4D60036A892 /* AppDelegate.swift */; };
 		258494501D2CD4D60036A892 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2584944F1D2CD4D60036A892 /* ViewController.swift */; };
 		258494561D2CD4D60036A892 /* Photoarchiving_v2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 258494541D2CD4D60036A892 /* Photoarchiving_v2.xcdatamodeld */; };
@@ -59,6 +61,8 @@
 		2524210A1D2DC7D000157321 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2524210C1D2DC7E000157321 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		252421101D2DC86C00157321 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		25396D2D1D2E0C0C0062DDA7 /* StoriesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoriesCell.xib; sourceTree = "<group>"; };
+		25396D2F1D2E0CD10062DDA7 /* StoriesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesTableViewCell.swift; sourceTree = "<group>"; };
 		2584944A1D2CD4D60036A892 /* Photoarchiving_v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photoarchiving_v2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2584944D1D2CD4D60036A892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2584944F1D2CD4D60036A892 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 		252421081D2DC7B900157321 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				25396D2C1D2E0BF70062DDA7 /* Stories Cell */,
 				25F8B0EF1D2DE62B00501525 /* RepoViewController.swift */,
 				2524210A1D2DC7D000157321 /* HomeViewController.swift */,
 				2524210C1D2DC7E000157321 /* LoginViewController.swift */,
@@ -167,6 +172,15 @@
 				252421101D2DC86C00157321 /* UserManager.swift */,
 			);
 			name = User;
+			sourceTree = "<group>";
+		};
+		25396D2C1D2E0BF70062DDA7 /* Stories Cell */ = {
+			isa = PBXGroup;
+			children = (
+				25396D2D1D2E0C0C0062DDA7 /* StoriesCell.xib */,
+				25396D2F1D2E0CD10062DDA7 /* StoriesTableViewCell.swift */,
+			);
+			name = "Stories Cell";
 			sourceTree = "<group>";
 		};
 		258494411D2CD4D60036A892 = {
@@ -371,6 +385,7 @@
 				2584945B1D2CD4D60036A892 /* LaunchScreen.storyboard in Resources */,
 				258494581D2CD4D60036A892 /* Assets.xcassets in Resources */,
 				25F25FF51D2D242E006A417E /* Media.xcassets in Resources */,
+				25396D2E1D2E0C0C0062DDA7 /* StoriesCell.xib in Resources */,
 				25F8B0EE1D2DDF5500501525 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,6 +462,7 @@
 				2524210D1D2DC7E000157321 /* LoginViewController.swift in Sources */,
 				258494501D2CD4D60036A892 /* ViewController.swift in Sources */,
 				258494811D2D02730036A892 /* Colors.swift in Sources */,
+				25396D301D2E0CD10062DDA7 /* StoriesTableViewCell.swift in Sources */,
 				252421111D2DC86C00157321 /* UserManager.swift in Sources */,
 				258494841D2D03C10036A892 /* Globals.swift in Sources */,
 				25F8B0F41D2DFF9500501525 /* PhotoViewController.swift in Sources */,

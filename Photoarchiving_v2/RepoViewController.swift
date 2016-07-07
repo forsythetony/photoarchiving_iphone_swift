@@ -59,7 +59,16 @@ class RepoViewController: UIViewController {
         
         NSNotificationCenter.defaultCenter().addObserverForName("didTouchPhoto", object: nil, queue: nil) { (notification) in
             
-            let photoData = notification.userInfo!["photoInfo"] as! TFPhoto
+
+                let photoData = notification.userInfo!["photoInfo"] as! TFPhoto
+
+                let photoVC = PhotoViewController()
+                photoVC.photoInfo = photoData
+                
+                self.presentViewController(photoVC, animated: true, completion: { 
+                    
+                })
+            
             
             
         }

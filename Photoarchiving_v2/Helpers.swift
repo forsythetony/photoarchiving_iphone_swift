@@ -52,6 +52,14 @@ public class TFDateHelper {
         return self.dateFormatter.dateFromString(dateString)
     }
     
+    public func getAPIStringFromDate(date : NSDate) -> String {
+        
+        self.dateFormatter.dateFormat = TFDateFormatType.api.rawValue
+        
+        return self.dateFormatter.stringFromDate(date)
+        
+    }
+    
     public func getV1StringFromDate(date : NSDate) -> String {
         
         self.dateFormatter.dateFormat = TFDateFormatType.v1.rawValue

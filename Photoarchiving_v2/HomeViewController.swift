@@ -94,6 +94,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     //  Tableview data source
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 50.0
+    }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.repos.count
     }

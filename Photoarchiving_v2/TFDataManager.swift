@@ -27,6 +27,74 @@ public class TFDataManager {
         
     }
     
+    public func getStoriesForPhoto( photoID : String, completion : (result : [TFStory]?, error : NSError?) -> Void)
+    {
+        let urlString = apiEndpoint + "story.php?p_id=" + photoID + "&ps_id=" + apiUse + "&request_type=photo-stories&auth_token=" + apiKey
+        
+        let url = NSURL(string: urlString)
+        
+        let urlRequest = NSURLRequest(URL: url!)
+        
+        NSURLConnection.sendAsynchronousRequest(urlRequest, queue: self.requestQueue) { (response, data, error) in
+            
+            let resp : NSHTTPURLResponse = response as! NSHTTPURLResponse
+            
+            if (resp.statusCode == 200)
+            {
+                self.processStoriesFromData(data!, completion: { (stories, error) in
+                    
+                    if error == nil
+                    {
+                        completion(result: stories, error: nil)
+                    }
+                    else
+                    {
+                        completion(result: nil, error: error)
+                    }
+                })
+            }
+        }
+    }
+    private func processStoriesFromData( data : NSData , completion : (stories : [TFStory]?, error : NSError?) -> Void)
+    {
+        let json = try? NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(rawValue : 0)) as! NSArray
+        
+        let jsonCount = json?.count
+        
+        var stories = [TFStory]()
+        if jsonCount == 0
+        {
+            completion(stories: stories, error: nil)
+            return
+        }
+        
+        for i in 0...(jsonCount! - 1)
+        {
+            let dictVal : NSDictionary = json![i] as! NSDictionary
+            
+            let newStory = TFStory()
+            
+            
+            newStory.story_id = dictVal["s_id"]?.stringValue
+            newStory.desc = dictVal["description"] as? String
+            newStory.title = dictVal["title"] as? String
+            newStory.recURL = dictVal["recording_url"] as? String
+            newStory.recordingText = dictVal["recording_text"] as? String
+            
+            if let upDate = dictVal["date_uploaded"] as? String
+            {
+                newStory.dateUploaded = self.dateHelper.getDateFromString(upDate, dateType: .v1)
+            }
+            else
+            {
+                newStory.dateUploaded = self.dateHelper.defaultMaxDate()
+            }
+            
+            stories.append(newStory)
+        }
+        
+        completion(stories : stories, error: nil)
+    }
     public func getPhotosForRepository( repoID : String, completion : (result : [TFPhoto]?, error : NSError?) -> Void)
     {
         let urlString = apiEndpoint + "photo.php?r_id=" + repoID + "&ps_id=" + self.apiUse + "&request_type=repo-photos&range_type=all&auth_token=" + apiKey
