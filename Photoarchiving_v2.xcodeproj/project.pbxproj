@@ -31,6 +31,7 @@
 		25F8B0EE1D2DDF5500501525 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25F8B0ED1D2DDF5500501525 /* Main.storyboard */; };
 		25F8B0F01D2DE62B00501525 /* RepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8B0EF1D2DE62B00501525 /* RepoViewController.swift */; };
 		25F8B0F21D2DF82500501525 /* MathHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8B0F11D2DF82500501525 /* MathHelpers.swift */; };
+		25F8B0F41D2DFF9500501525 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8B0F31D2DFF9500501525 /* PhotoViewController.swift */; };
 		BFAB8BE00DD9FCD62286D4BE /* Pods_Photoarchiving_v2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D23620A948DE80C202842D31 /* Pods_Photoarchiving_v2.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,7 @@
 		25F8B0ED1D2DDF5500501525 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		25F8B0EF1D2DE62B00501525 /* RepoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoViewController.swift; sourceTree = "<group>"; };
 		25F8B0F11D2DF82500501525 /* MathHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathHelpers.swift; sourceTree = "<group>"; };
+		25F8B0F31D2DFF9500501525 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		4C27B89B1F3081BCD9C8239C /* Pods-Photoarchiving_v2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photoarchiving_v2.release.xcconfig"; path = "Pods/Target Support Files/Pods-Photoarchiving_v2/Pods-Photoarchiving_v2.release.xcconfig"; sourceTree = "<group>"; };
 		709568E51A06F6352FBADACA /* Pods-Photoarchiving_v2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photoarchiving_v2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Photoarchiving_v2/Pods-Photoarchiving_v2.debug.xcconfig"; sourceTree = "<group>"; };
 		D23620A948DE80C202842D31 /* Pods_Photoarchiving_v2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Photoarchiving_v2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +147,7 @@
 				25F8B0EF1D2DE62B00501525 /* RepoViewController.swift */,
 				2524210A1D2DC7D000157321 /* HomeViewController.swift */,
 				2524210C1D2DC7E000157321 /* LoginViewController.swift */,
+				25F8B0F31D2DFF9500501525 /* PhotoViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 				258494811D2D02730036A892 /* Colors.swift in Sources */,
 				252421111D2DC86C00157321 /* UserManager.swift in Sources */,
 				258494841D2D03C10036A892 /* Globals.swift in Sources */,
+				25F8B0F41D2DFF9500501525 /* PhotoViewController.swift in Sources */,
 				258494861D2D04170036A892 /* TextDisplay.swift in Sources */,
 				258494881D2D056C0036A892 /* Views.swift in Sources */,
 				25F8B0F21D2DF82500501525 /* MathHelpers.swift in Sources */,

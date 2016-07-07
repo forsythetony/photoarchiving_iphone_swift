@@ -112,6 +112,45 @@
             </objects>
             <point key="canvasLocation" x="1483" y="883"/>
         </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="dSv-HL-2Xd">
+            <objects>
+                <viewController id="Eay-iQ-XvN" customClass="PhotoViewController" customModule="Photoarchiving_v2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DqA-DJ-pmq"/>
+                        <viewControllerLayoutGuide type="bottom" id="1I5-Fg-fKW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dSV-TL-XJ4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c6v-ZP-qly">
+                                <rect key="frame" x="20" y="400" width="560" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Vhi-Kr-NhI"/>
+                                </constraints>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e6N-fJ-iQE">
+                                <rect key="frame" x="20" y="20" width="560" height="380"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="e6N-fJ-iQE" firstAttribute="leading" secondItem="dSV-TL-XJ4" secondAttribute="leadingMargin" id="6z6-hU-xPo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="e6N-fJ-iQE" secondAttribute="trailing" id="7fI-1W-Suu"/>
+                            <constraint firstItem="c6v-ZP-qly" firstAttribute="top" secondItem="e6N-fJ-iQE" secondAttribute="bottom" id="aTL-sN-6ba"/>
+                            <constraint firstItem="1I5-Fg-fKW" firstAttribute="top" secondItem="c6v-ZP-qly" secondAttribute="bottom" id="cTj-WN-ndg"/>
+                            <constraint firstItem="e6N-fJ-iQE" firstAttribute="top" secondItem="DqA-DJ-pmq" secondAttribute="bottom" id="mL6-2P-uoy"/>
+                            <constraint firstItem="c6v-ZP-qly" firstAttribute="leading" secondItem="dSV-TL-XJ4" secondAttribute="leadingMargin" id="vpJ-hG-BRd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="c6v-ZP-qly" secondAttribute="trailing" id="vuX-wR-pjG"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gdw-aX-odQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2293" y="795"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="IWD-6f-1jX">
             <objects>
