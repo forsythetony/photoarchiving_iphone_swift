@@ -9,6 +9,13 @@
 import Foundation
 import UIKit
 
+public struct TFRepository {
+    var repo_id : String?
+    var title : String?
+    var dateCreated : NSDate?
+    var description : String?
+}
+
 struct TFPhoto {
     
     var mainURL : String?

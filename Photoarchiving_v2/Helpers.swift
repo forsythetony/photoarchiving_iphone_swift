@@ -11,6 +11,7 @@ import Foundation
 public enum TFDateFormatType : String {
     case ISO = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
     case v1 = "yyyy-MM-dd"
+    case api = "yyyy-MM-dd HH:mm:ss"
 }
 
 public class TFDateHelper {
