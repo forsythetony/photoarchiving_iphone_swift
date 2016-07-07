@@ -139,30 +139,14 @@
 			name = Photos;
 			sourceTree = "<group>";
 		};
-		252421071D2DC78C00157321 /* Login View Controller */ = {
-			isa = PBXGroup;
-			children = (
-				2524210C1D2DC7E000157321 /* LoginViewController.swift */,
-			);
-			name = "Login View Controller";
-			sourceTree = "<group>";
-		};
 		252421081D2DC7B900157321 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				25F8B0EF1D2DE62B00501525 /* RepoViewController.swift */,
-				252421091D2DC7C000157321 /* Home View Controller */,
-				252421071D2DC78C00157321 /* Login View Controller */,
+				2524210A1D2DC7D000157321 /* HomeViewController.swift */,
+				2524210C1D2DC7E000157321 /* LoginViewController.swift */,
 			);
 			name = "View Controllers";
-			sourceTree = "<group>";
-		};
-		252421091D2DC7C000157321 /* Home View Controller */ = {
-			isa = PBXGroup;
-			children = (
-				2524210A1D2DC7D000157321 /* HomeViewController.swift */,
-			);
-			name = "Home View Controller";
 			sourceTree = "<group>";
 		};
 		2524210E1D2DC85300157321 /* Managers */ = {
