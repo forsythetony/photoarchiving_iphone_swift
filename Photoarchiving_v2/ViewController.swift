@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         
         let tfDateLogString = dateHelper.getLogStringForTFDate(tfDate)
         
-        print(tfDateLogString)
+        //print(tfDateLogString)
         
         let newDate = NSDate()
         
@@ -38,12 +38,12 @@ class ViewController: UIViewController {
         self.view.addSubview(timelineSV)
     
     
-        let defaultPhotoData = TFPhoto.testPhoto()
-        
-        let photoView = TFPhotoThumbView(photoData: defaultPhotoData)
-        
-        
-        timelineSV.addSubview(photoView)
+//        let defaultPhotoData = TFPhoto.testPhoto()
+//        
+//        let photoView = TFPhotoThumbView(photoData: defaultPhotoData)
+//        
+//        
+//        timelineSV.addSubview(photoView)
 //        photoView.customAddConstraints()
     }
 

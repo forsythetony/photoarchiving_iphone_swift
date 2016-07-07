@@ -18,7 +18,7 @@ class RepoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setup()
         getPhotos()
     }
     
@@ -45,7 +45,7 @@ class RepoViewController: UIViewController {
             if error == nil
             {
                 self.repoInfo?.photos = result!
-                print(self.repoInfo?.photos)
+                //print(self.repoInfo?.photos)
                 
                 dispatch_async(dispatch_get_main_queue(), { 
                     self.addPhotosToTimeline()
@@ -53,6 +53,16 @@ class RepoViewController: UIViewController {
             }
         }
         
+    }
+    
+    private func setup() {
+        
+        NSNotificationCenter.defaultCenter().addObserverForName("didTouchPhoto", object: nil, queue: nil) { (notification) in
+            
+            let photoData = notification.userInfo!["photoInfo"] as! TFPhoto
+            
+            
+        }
     }
     
     private func addPhotosToTimeline() {

@@ -225,7 +225,7 @@ public class TFTimelineScrollView : UIScrollView {
                 }
             }
             
-            print("\nYear :\t\(yearVal)\nShould Display :\t\(shouldDisplay)\n")
+            //print("\nYear :\t\(yearVal)\nShould Display :\t\(shouldDisplay)\n")
             
             let tfPoint = TFTimelineScrollViewPoint(point: pnt, titleString: title, shouldDisplayTitle: shouldDisplay)
             

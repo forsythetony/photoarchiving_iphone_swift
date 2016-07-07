@@ -95,6 +95,12 @@ public class TFPhotoThumbView : UIView {
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    public override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "didTouchPhoto", object: self, userInfo: ["photoInfo" : self.photoData]))
+        
+    }
 }
 
 

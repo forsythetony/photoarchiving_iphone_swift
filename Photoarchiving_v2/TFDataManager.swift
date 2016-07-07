@@ -98,12 +98,12 @@ public class TFDataManager {
         {
             let dictVal : NSDictionary = json![i] as! NSDictionary
             
-            var newPhoto = TFPhoto()
+            let newPhoto = TFPhoto()
             
             newPhoto.dateConf = Float(dictVal["date_conf"] as! Float)
             newPhoto.dateTaken = self.dateHelper.getDateFromString(dictVal["date_taken"] as! String, dateType: TFDateFormatType.v1)
             newPhoto.title = dictVal["title"] as? String
-            newPhoto.description = dictVal["description"] as? String
+            newPhoto.desc = dictVal["description"] as? String
             newPhoto.dateUploaded = self.dateHelper.getDateFromString(dictVal["date_uploaded"] as! String, dateType: TFDateFormatType.api)
             newPhoto.mainURL = dictVal["large_url"] as? String
             newPhoto.thumbURL = dictVal["thumb_url"] as? String
