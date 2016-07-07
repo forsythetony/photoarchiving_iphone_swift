@@ -14,9 +14,13 @@ public struct TFRepository {
     var title : String?
     var dateCreated : NSDate?
     var description : String?
+    var minDate : NSDate?
+    var maxDate : NSDate?
+    
+    var photos : [TFPhoto] = [TFPhoto]()
 }
 
-struct TFPhoto {
+public struct TFPhoto {
     
     var mainURL : String?
     var thumbURL : String?
@@ -26,7 +30,8 @@ struct TFPhoto {
     var dateConf : Float?
     var uploadedBy : String?
     var repoID : String?
-    
+    var dateUploaded : NSDate?
+    var description : String?
     
 }
 
@@ -42,6 +47,7 @@ extension TFPhoto {
         let r_id = "1"
         let uploader_id = "1"
         
-        return TFPhoto(mainURL: mainURL, thumbURL: thumbURL, id: id, title: title, dateTaken: date_taken, dateConf: dateConf, uploadedBy: uploader_id, repoID: r_id)
+        return TFPhoto(mainURL: mainURL, thumbURL: thumbURL, id: id, title: title, dateTaken: date_taken, dateConf: dateConf, uploadedBy: uploader_id, repoID: r_id, dateUploaded: NSDate(), description: "")
+        
     }
 }

@@ -87,11 +87,30 @@
                     <navigationItem key="navigationItem" id="mL7-Qs-u58"/>
                     <connections>
                         <outlet property="reposTblView" destination="EIs-7c-wNc" id="9jE-5L-9Bw"/>
+                        <segue destination="mdF-fa-Xih" kind="show" identifier="pushToRepoView" id="NJR-ua-PHB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vqL-xH-esz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="582" y="936"/>
+        </scene>
+        <!--Repo View Controller-->
+        <scene sceneID="FY0-ZH-EHM">
+            <objects>
+                <viewController id="mdF-fa-Xih" customClass="RepoViewController" customModule="Photoarchiving_v2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xyo-6V-Kg6"/>
+                        <viewControllerLayoutGuide type="bottom" id="ufq-Gm-JWm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zxB-W0-bGs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IFm-Oo-fji" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1483" y="883"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="IWD-6f-1jX">

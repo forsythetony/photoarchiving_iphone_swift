@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public enum TFDateFormatType : String {
     case ISO = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
@@ -120,8 +121,34 @@ public class TFDateHelper {
         
         
     }
+    
+    
+    public func defaultMinDate() -> NSDate
+    {
+        return self.getDateFromString("1900-01-01", dateType: .v1)!
+    }
+    
+    public func defaultMaxDate() -> NSDate
+    {
+        return NSDate()
+    }
 }
 
+//  For Timeline
+public extension TFDateHelper
+{
+    public func getPosValue( dr : TFDateRange, lineLength : CGFloat, pointDate : NSDate) -> CGFloat
+    {
+        //  Get seconds from start
+        let secondsFromStart = pointDate.timeIntervalSinceDate(dr.startDate)
+        
+        let conversionFactor = Float(lineLength) / Float(dr.secondsDiff!)
+        
+        let newX = CGFloat( conversionFactor * Float(secondsFromStart))
+        
+        return newX
+    }
+}
 public struct TFDateRange {
     
     public let startDate : NSDate

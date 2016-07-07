@@ -116,4 +116,22 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
+    //  Tableview Delegate
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        self.performSegueWithIdentifier("pushToRepoView", sender: indexPath.row)
+        
+    }
+    
+    //  Segue
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "pushToRepoView"
+        {
+            let destVC = segue.destinationViewController as! RepoViewController
+            
+            destVC.repoInfo = self.repos[sender as! Int]
+        }
+    }
+    
 }

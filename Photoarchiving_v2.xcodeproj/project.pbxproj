@@ -29,6 +29,8 @@
 		25F25FF71D2D2875006A417E /* TFPhotoThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F25FF61D2D2875006A417E /* TFPhotoThumbView.swift */; };
 		25F25FF91D2D3A7F006A417E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F25FF81D2D3A7F006A417E /* AVFoundation.framework */; };
 		25F8B0EE1D2DDF5500501525 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25F8B0ED1D2DDF5500501525 /* Main.storyboard */; };
+		25F8B0F01D2DE62B00501525 /* RepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8B0EF1D2DE62B00501525 /* RepoViewController.swift */; };
+		25F8B0F21D2DF82500501525 /* MathHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8B0F11D2DF82500501525 /* MathHelpers.swift */; };
 		BFAB8BE00DD9FCD62286D4BE /* Pods_Photoarchiving_v2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D23620A948DE80C202842D31 /* Pods_Photoarchiving_v2.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +80,8 @@
 		25F25FF61D2D2875006A417E /* TFPhotoThumbView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFPhotoThumbView.swift; sourceTree = "<group>"; };
 		25F25FF81D2D3A7F006A417E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		25F8B0ED1D2DDF5500501525 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		25F8B0EF1D2DE62B00501525 /* RepoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoViewController.swift; sourceTree = "<group>"; };
+		25F8B0F11D2DF82500501525 /* MathHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathHelpers.swift; sourceTree = "<group>"; };
 		4C27B89B1F3081BCD9C8239C /* Pods-Photoarchiving_v2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photoarchiving_v2.release.xcconfig"; path = "Pods/Target Support Files/Pods-Photoarchiving_v2/Pods-Photoarchiving_v2.release.xcconfig"; sourceTree = "<group>"; };
 		709568E51A06F6352FBADACA /* Pods-Photoarchiving_v2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photoarchiving_v2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Photoarchiving_v2/Pods-Photoarchiving_v2.debug.xcconfig"; sourceTree = "<group>"; };
 		D23620A948DE80C202842D31 /* Pods_Photoarchiving_v2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Photoarchiving_v2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +150,7 @@
 		252421081D2DC7B900157321 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				25F8B0EF1D2DE62B00501525 /* RepoViewController.swift */,
 				252421091D2DC7C000157321 /* Home View Controller */,
 				252421071D2DC78C00157321 /* Login View Controller */,
 			);
@@ -245,6 +250,7 @@
 				258494831D2D03C10036A892 /* Globals.swift */,
 				258494851D2D04170036A892 /* TextDisplay.swift */,
 				258494871D2D056C0036A892 /* Views.swift */,
+				25F8B0F11D2DF82500501525 /* MathHelpers.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -458,7 +464,9 @@
 				258494841D2D03C10036A892 /* Globals.swift in Sources */,
 				258494861D2D04170036A892 /* TextDisplay.swift in Sources */,
 				258494881D2D056C0036A892 /* Views.swift in Sources */,
+				25F8B0F21D2DF82500501525 /* MathHelpers.swift in Sources */,
 				2523B93B1D2D2098007B9936 /* Photos.swift in Sources */,
+				25F8B0F01D2DE62B00501525 /* RepoViewController.swift in Sources */,
 				2584944E1D2CD4D60036A892 /* AppDelegate.swift in Sources */,
 				2523B9341D2D0E79007B9936 /* TFTimelineScrollView.swift in Sources */,
 				25F25FF71D2D2875006A417E /* TFPhotoThumbView.swift in Sources */,

@@ -41,6 +41,7 @@ public class TFTimelineScrollView : UIScrollView {
     
     public var paddingBetweenLinesAndText : CGFloat = 5.0
     
+    private var photoThumbViews = [TFPhotoThumbView]()
     
     public var lineWidth : CGFloat = 1.0 {
         didSet {
@@ -88,6 +89,24 @@ public class TFTimelineScrollView : UIScrollView {
         addYearPoints()
 
         CGContextRestoreGState(ctx)
+    }
+    
+    public func addPhotoInfo( photoInfo : TFPhoto)
+    {
+        //  Calculate center
+        let centerX = TFMath.randomCGFloatBetweenTwoPoints(self.horizontalPadding + self.longLineLength + (50.0), max: self.bounds.width)
+        let centerY = self.dateMan.getPosValue(self.dateRange, lineLength: (self.contentSize.height - (self.verticalPadding * 2.0)), pointDate: photoInfo.dateTaken!) + self.verticalPadding
+        
+        let photoCenter = CGPoint(x: centerX, y: centerY)
+        
+        //  Create photo view
+        let photoView = TFPhotoThumbView(photoData: photoInfo)
+        
+        self.addSubview(photoView)
+        photoView.center = photoCenter
+        
+        self.photoThumbViews.append(photoView)
+        
     }
     private func addYearPoints() {
         
