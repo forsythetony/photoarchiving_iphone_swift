@@ -13,3 +13,9 @@ public class GlobalConfig {
     
     static let defaultFontFamily = "Avenir"
 }
+public extension UIFont {
+    
+    public static func globalFontWithSize( sz : CGFloat ) -> UIFont {
+        return UIFont(name: GlobalConfig.defaultFontFamily, size: sz)!
+    }
+}

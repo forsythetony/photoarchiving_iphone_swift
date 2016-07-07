@@ -94,7 +94,7 @@ public class TFTimelineScrollView : UIScrollView {
     public func addPhotoInfo( photoInfo : TFPhoto)
     {
         //  Calculate center
-        let centerX = TFMath.randomCGFloatBetweenTwoPoints(self.horizontalPadding + self.longLineLength + (50.0), max: self.bounds.width)
+        let centerX = TFMath.randomCGFloatBetweenTwoPoints(self.horizontalPadding + self.longLineLength + (100.0), max: self.bounds.width - 50.0)
         let centerY = self.dateMan.getPosValue(self.dateRange, lineLength: (self.contentSize.height - (self.verticalPadding * 2.0)), pointDate: photoInfo.dateTaken!) + self.verticalPadding
         
         let photoCenter = CGPoint(x: centerX, y: centerY)

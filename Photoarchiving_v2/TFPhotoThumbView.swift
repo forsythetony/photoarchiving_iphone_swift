@@ -14,7 +14,7 @@ import UIKit
 public class TFPhotoThumbView : UIView {
     
     let photoData : TFPhoto
-    private let viewDim : CGFloat = 50.0
+    private let viewDim : CGFloat = 75.0
     
     public var imgView : UIImageView?
     

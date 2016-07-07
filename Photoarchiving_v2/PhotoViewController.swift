@@ -19,6 +19,7 @@ class PhotoViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     lazy var dateHelper = TFDateHelper.sharedInstance
     lazy var dataMan = TFDataManager.sharedInstance
+    private let audioMan = TFAudioManager.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,9 +81,13 @@ class PhotoViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tblView.delegate = self
         tblView.dataSource = self
         
-        tblView.registerNib(UINib(nibName: "StoriesCell", bundle: nil), forCellReuseIdentifier: StoriesTableViewCell.cellReuseID)
+        tblView.registerClass(TFStoriesTableViewCell.self, forCellReuseIdentifier: TFStoriesTableViewCell.cellReuseID)
         
         self.view.addSubview(tblView)
+        
+        
+        tblView.backgroundColor = Color.patternedTweed()
+        tblView.separatorStyle = UITableViewCellSeparatorStyle.None
         
         tblView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -103,27 +108,6 @@ class PhotoViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             if error == nil
             {
-//                dispatch_async(dispatch_get_main_queue(), {
-//                    
-//                    self.storiesTableView!.beginUpdates()
-//                    
-//                    let startIndexPath : Int = self.photoStories.count
-//                    
-//                    var indexPaths = [NSIndexPath]()
-//                    
-//                    for i in 0...((result?.count)! - 1)
-//                    {
-//                        let newIndexPath = NSIndexPath(forRow: i + startIndexPath, inSection: 0)
-//                        indexPaths.append(newIndexPath)
-//                    }
-//                    
-//                    self.photoStories.appendContentsOf(result!)
-//                    
-//                    self.storiesTableView!.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Fade)
-//                    
-//                    self.storiesTableView!.endUpdates()
-//                    
-//                })
                 dispatch_async(dispatch_get_main_queue(), {
                     
                     self.photoStories.appendContentsOf(result!)
@@ -153,7 +137,7 @@ class PhotoViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return CGFloat(StoriesTableViewCell.fixedHeight)
+        return TFStoriesTableViewCell.cellHeight
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -167,20 +151,44 @@ class PhotoViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell : StoriesTableViewCell =
-            self.storiesTableView.dequeueReusableCellWithIdentifier(StoriesTableViewCell.cellReuseID) as! StoriesTableViewCell
-        
-        cell.setThingsUp()
+        let cell : TFStoriesTableViewCell = self.storiesTableView.dequeueReusableCellWithIdentifier(TFStoriesTableViewCell.cellReuseID, forIndexPath: indexPath) as! TFStoriesTableViewCell
         
         let story = self.photoStories[indexPath.row]
         
-        cell.titleLable.text = story.title
-        cell.uploadedLabel.text = self.dateHelper.getAPIStringFromDate(story.dateUploaded!)
-        cell.descriptionLabel.text = story.desc
+        
+        cell.titleLabel.text = story.title
+        
+        if let desc = story.recURL
+        {
+            if desc == ""
+            {
+                cell.descriptionTextbox.text = "No description..."
+            }
+            else
+            {
+                cell.descriptionTextbox.text = desc
+            }
+        }
+        
+        
+        if let dateUp = story.dateUploaded
+        {
+            cell.dateUploadedValue.text = self.dateHelper.getAPIStringFromDate(dateUp)
+        }
+        
+        
+        
         
         return cell
-        
     }
     
-    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let story = self.photoStories[indexPath.row]
+        
+        self.audioMan.playAudioFromStory(story)
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+    }
 }

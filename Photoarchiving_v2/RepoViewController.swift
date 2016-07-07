@@ -60,8 +60,9 @@ class RepoViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserverForName("didTouchPhoto", object: nil, queue: nil) { (notification) in
             
 
-                let photoData = notification.userInfo!["photoInfo"] as! TFPhoto
-
+                let photoDataView = notification.object as! TFPhotoThumbView
+                let photoData = photoDataView.photoData
+            
                 let photoVC = PhotoViewController()
                 photoVC.photoInfo = photoData
                 
@@ -86,7 +87,7 @@ class RepoViewController: UIViewController {
         
         let range = TFDateHelper.sharedInstance.getYearRange((self.repoInfo?.minDate)!, end: self.repoInfo!.maxDate!)
         
-        let contentSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.height * 2.0)
+        let contentSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.height * 4.0)
         
         let frame = self.view.bounds
         
