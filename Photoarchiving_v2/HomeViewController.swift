@@ -152,5 +152,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
+    // MARK: Custom Initialization and Subview Layout
+    
     
 }
