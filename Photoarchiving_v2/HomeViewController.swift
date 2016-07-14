@@ -10,10 +10,26 @@ import UIKit
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    /// Outlet version, this should be replaced by one that's created in
+    /// code
     @IBOutlet weak var reposTblView: UITableView!
     
+    /// This should be the new tableview used
+    private let reposTableView : UITableView = {
+        let tempReposTableView = UITableView()
+        
+        tempReposTableView.separatorStyle = .None
+        
+        return tempReposTableView
+    }()
+    
+    /// The user manager, this should be used to handle all CRUD operations on
+    /// user information
     private lazy var userMan = TFUserManager.sharedInstance
+    
+    /// The data manager, this should be used to handle all networking calls
     private lazy var dataMan = TFDataManager.sharedInstance
+    
     
     private var didLoadPhotos = false
     
@@ -22,8 +38,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        
-        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -142,5 +156,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             destVC.repoInfo = self.repos[sender as! Int]
         }
     }
+    
+    
     
 }
