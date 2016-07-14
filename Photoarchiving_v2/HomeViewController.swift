@@ -15,13 +15,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var reposTblView: UITableView!
     
     /// This should be the new tableview used
-    private let reposTableView : UITableView = {
-        let tempReposTableView = UITableView()
-        
-        tempReposTableView.separatorStyle = .None
-        
-        return tempReposTableView
-    }()
+    private let reposTableView : UITableView = UITableView()
     
     /// The user manager, this should be used to handle all CRUD operations on
     /// user information
