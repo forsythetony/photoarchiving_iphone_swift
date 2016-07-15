@@ -17,12 +17,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     /// This should be the new tableview used
     private let reposTableView : UITableView = UITableView()
     
+    private let reposTitleLabel : UILabel = UILabel()
+    
+    /*
+        Singleton Managers
+    */
+    
     /// The user manager, this should be used to handle all CRUD operations on
     /// user information
-    private lazy var userMan = TFUserManager.sharedInstance
+    let userMan = TFUserManager.sharedInstance
     
     /// The data manager, this should be used to handle all networking calls
-    private lazy var dataMan = TFDataManager.sharedInstance
+    let dataMan = TFDataManager.sharedInstance
     
     
     private var didLoadPhotos = false
@@ -31,7 +37,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
+        customSetupViews()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -39,11 +45,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         checkUserLogin()
     }
     
-    
-    private func setupTableView() {
-        self.reposTblView.delegate = self
-        self.reposTblView.dataSource = self
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
     }
+    
+    
     private func checkUserLogin() {
         
         if (!self.userMan.loginInformation.isLoggedIn!)
@@ -57,6 +64,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else
         {
+            
             if(!self.didLoadPhotos)
             {
                 self.dataMan.getRepositoriesForUser("1", completion: { (result, error) in
@@ -155,4 +163,92 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: Custom Initialization and Subview Layout
     
     
+    /**
+     Sets up the tableview
+     */
+    private func customSetupViews() {
+        
+        /*
+            Repos TableView
+        */
+        
+        //  Old way
+        self.reposTblView.delegate = self
+        self.reposTblView.dataSource = self
+        
+        //  New way
+        self.reposTableView.delegate    = self
+        self.reposTableView.dataSource  = self
+        
+        self.reposTableView.separatorStyle = .None
+        
+        
+        
+        
+        /*
+            Repos Title Label
+        */
+        
+        let reposTitleLabelText                 = "My Repositories"
+        let reposTitleLabelFontSize : CGFloat   = 15.0
+        let reposTitleLabelFontColor            = Color.darkGrayColor()
+        
+        self.reposTitleLabel.text = reposTitleLabelText
+        self.reposTitleLabel.font = UIFont.globalFontWithSize(reposTitleLabelFontSize)
+        self.reposTitleLabel.textColor = reposTitleLabelFontColor
+        
+        
+        
+    }
+    
+    private func customSetupSubviews() {
+        
+        /*
+            Constants
+        */
+        
+        let reposTitleLabelHeight : CGFloat         = 50.0
+        let topPadding : CGFloat                    = 20.0
+        let verticalViewsPadding : CGFloat          = 10.0
+        let horizontalPadding : CGFloat             = 10.0
+        let bottomPadding : CGFloat                 = 10.0
+        
+        let mainView    = self.view
+        let lView       = self.reposTitleLabel
+        let tView       = self.reposTableView
+        
+        let tlg = self.topLayoutGuide
+        let blg = self.bottomLayoutGuide
+        
+        /*
+            Adding subviews
+        */
+        mainView.addSubview(lView)
+        mainView.addSubview(tView)
+        
+        
+        /*
+            Adding constraints
+        */
+        var layoutConstraints : [NSLayoutConstraint] = [NSLayoutConstraint]()
+        
+        
+        //  Title Label
+        layoutConstraints.append(lView.heightAnchor.constraintEqualToConstant(reposTitleLabelHeight))
+        layoutConstraints.append(lView.leadingAnchor.constraintEqualToAnchor(mainView.leadingAnchor, constant: horizontalPadding))
+        layoutConstraints.append(lView.trailingAnchor.constraintEqualToAnchor(mainView.trailingAnchor, constant: horizontalPadding))
+        layoutConstraints.append(lView.topAnchor.constraintEqualToAnchor(tlg.bottomAnchor, constant: topPadding))
+        
+        //  Title Label & Table View
+        layoutConstraints.append(lView.bottomAnchor.constraintEqualToAnchor(tView.topAnchor, constant: verticalViewsPadding))
+        
+        //  Table View
+        layoutConstraints.append(tView.leadingAnchor.constraintEqualToAnchor(mainView.leadingAnchor, constant: horizontalPadding))
+        layoutConstraints.append(tView.trailingAnchor.constraintEqualToAnchor(mainView.trailingAnchor, constant: horizontalPadding))
+        layoutConstraints.append(tView.bottomAnchor.constraintEqualToAnchor(blg.topAnchor, constant: bottomPadding))
+        
+        
+        NSLayoutConstraint.activateConstraints(layoutConstraints)
+
+    }
 }
