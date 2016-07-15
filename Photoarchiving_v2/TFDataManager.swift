@@ -19,7 +19,7 @@ public class TFDataManager {
     private lazy var requestQueue = NSOperationQueue()
     
     private let apiKey = "DXQ4kGBH9b5hoT1IMZxpqai9RosriN7WLX05DCMNNS4bM6Uy5rYvCgEtE7VXV2TG"
-    private let apiUse = "1"
+    private let apiUser = "1"
     private let apiEndpoint = "http://40.86.85.30/cs4380/api/"
     
     
@@ -27,9 +27,76 @@ public class TFDataManager {
         
     }
     
+    
+    //  MARK: Data Retrieval Functions
+    
+    
+    
+    /**
+        Retrieves all of the stories for a particular photograph
+     
+     - parameter photoID:       photoID ->  The identifier (string) for the photograph
+                                completion ->   The completion block that either returns an array of processed stories or 
+                                                an error if the stories could not be retrieved or processed
+     - parameter completion:    This function does not return anything upon completion (aside from what it returns in the
+                                completion block...)
+     */
     public func getStoriesForPhoto( photoID : String, completion : (result : [TFStory]?, error : NSError?) -> Void)
     {
-        let urlString = apiEndpoint + "story.php?p_id=" + photoID + "&ps_id=" + apiUse + "&request_type=photo-stories&auth_token=" + apiKey
+        let urlString = apiEndpoint + "story.php?p_id=" + photoID + "&ps_id=" + self.apiUser + "&request_type=photo-stories&auth_token=" + apiKey
+        
+        let url = NSURL(string: urlString)
+        
+        let urlRequest = NSURLRequest(URL: url!)
+        
+        NSURLConnection.sendAsynchronousRequest(urlRequest, queue: self.requestQueue) { (response, data, error) in
+
+            if response != nil
+            {
+                let resp : NSHTTPURLResponse = response as! NSHTTPURLResponse
+                
+                if (resp.statusCode == 200)
+                {
+                    self.processStoriesFromData(data!, completion: { (stories, error) in
+                        
+                        if error == nil
+                        {
+                            completion(result: stories, error: nil)
+                        }
+                        else
+                        {
+                            completion(result: nil, error: error)
+                        }
+                    })
+                }
+            }
+            else
+            {
+                /*
+                    Ideally it should print some error to the log but we don't really have logging set up yet...
+                */
+                
+                let errorMessage = "Could not get a response for the request with the URL -> " + urlString
+                
+                print(errorMessage)
+            }
+            
+        }
+    }
+    
+    /**
+        Retrieves all of the photographs from the API (currently it is using the default user)
+     
+     - parameter repoID:        repoID  ->      The identifier for the repository (string)
+                                completion ->   The completion block that either returns (or rather passes back) an array
+                                                of all the photographs that have been processed or an error.
+     
+     - parameter completion:    This function does not return anything upon completion (aside from what's returned in the completion 
+                                block
+     */
+    public func getPhotosForRepository( repoID : String, completion : (result : [TFPhoto]?, error : NSError?) -> Void)
+    {
+        let urlString = apiEndpoint + "photo.php?r_id=" + repoID + "&ps_id=" + self.apiUser + "&request_type=repo-photos&range_type=all&auth_token=" + apiKey
         
         let url = NSURL(string: urlString)
         
@@ -37,24 +104,106 @@ public class TFDataManager {
         
         NSURLConnection.sendAsynchronousRequest(urlRequest, queue: self.requestQueue) { (response, data, error) in
             
-            let resp : NSHTTPURLResponse = response as! NSHTTPURLResponse
             
-            if (resp.statusCode == 200)
+            if response != nil
             {
-                self.processStoriesFromData(data!, completion: { (stories, error) in
-                    
-                    if error == nil
-                    {
-                        completion(result: stories, error: nil)
-                    }
-                    else
-                    {
-                        completion(result: nil, error: error)
-                    }
-                })
+                let resp : NSHTTPURLResponse = response as! NSHTTPURLResponse
+                
+                if (resp.statusCode == 200)
+                {
+                    self.processPhotosFromData(data!, completion: { (photos, error) in
+                        
+                        if (error == nil)
+                        {
+                            completion(result: photos, error: nil)
+                        }
+                        else
+                        {
+                            completion(result: nil, error: error)
+                        }
+                    })
+                }
             }
+            else
+            {
+                /*
+                    Ideally it should print some error to the log but we don't really have logging set up yet...
+                 */
+                
+                let errorMessage = "I couldn't get a reponse for the request with the URL -> " + urlString
+                
+                print(errorMessage)
+            }
+            
         }
     }
+    
+    /**
+        Retrieves all of the repositories for a given user
+     
+     - parameter userID:        userID ->       The identifier (string) for the user
+                                completion ->   The completion block that will either return (or rather pass as parameters in a block...)
+                                                the result as an array of processed repository (TFRepository) objects or an error
+     - parameter completion:    This function does not return anything upon completion
+     */
+    public func getRepositoriesForUser( userID : String, completion : (result : [TFRepository]?, error : NSError?) -> Void)
+    {
+        let urlString = apiEndpoint + "repository.php?req_type=user_repos&ps_id=" + userID + "&auth_token=" + apiKey;
+        
+        print(urlString)
+        
+        let url = NSURL(string: urlString)
+        
+        let urlRequest = NSURLRequest(URL: url!)
+        
+        NSURLConnection.sendAsynchronousRequest(urlRequest, queue: self.requestQueue) { (response, data, error) in
+            
+            
+            if response != nil
+            {
+                let resp : NSHTTPURLResponse = response as! NSHTTPURLResponse
+                
+                if (resp.statusCode == 200)
+                {
+                    self.processRepositoriesFromData(data!, completion: { (repos, error) in
+                        
+                        if (error == nil)
+                        {
+                            
+                            completion(result: repos, error: nil)
+                        }
+                        else
+                        {
+                            completion(result: nil, error: error)
+                        }
+                    })
+                }
+            }
+            else
+            {
+                let errorMessage = "The response I got back was nil..."
+                
+                print(errorMessage)
+            }
+            
+        }
+        
+    }
+    
+    
+    //  MARK: Data Processing Functions
+    
+    
+    
+    /**
+        Processes the stories the stories from the raw JSON data received from the API
+     
+     - parameter data:      data    ->      The raw NSData receieved from the request
+                            completion ->   The completion block that returns either an array with all the processed 
+                                            stories or an error
+     
+     - parameter completion:    This function does not return anything (except in the completion block...)
+     */
     private func processStoriesFromData( data : NSData , completion : (stories : [TFStory]?, error : NSError?) -> Void)
     {
         let json = try? NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(rawValue : 0)) as! NSArray
@@ -95,64 +244,11 @@ public class TFDataManager {
         
         completion(stories : stories, error: nil)
     }
-    public func getPhotosForRepository( repoID : String, completion : (result : [TFPhoto]?, error : NSError?) -> Void)
-    {
-        let urlString = apiEndpoint + "photo.php?r_id=" + repoID + "&ps_id=" + self.apiUse + "&request_type=repo-photos&range_type=all&auth_token=" + apiKey
-        
-        let url = NSURL(string: urlString)
-        
-        let urlRequest = NSURLRequest(URL: url!)
-        
-        NSURLConnection.sendAsynchronousRequest(urlRequest, queue: self.requestQueue) { (response, data, error) in
-            
-            let resp : NSHTTPURLResponse = response as! NSHTTPURLResponse
-            
-            if (resp.statusCode == 200)
-            {
-                self.processPhotosFromData(data!, completion: { (photos, error) in
-                    
-                    if (error == nil)
-                    {
-                        completion(result: photos, error: nil)
-                    }
-                    else
-                    {
-                        completion(result: nil, error: error)
-                    }
-                })
-            }
-        }
-    }
-    public func getRepositoriesForUser( userID : String, completion : (result : [TFRepository]?, error : NSError?) -> Void)
-    {
-        let urlString = apiEndpoint + "repository.php?req_type=user_repos&ps_id=" + userID + "&auth_token=" + apiKey;
-        
-        let url = NSURL(string: urlString)
-        
-        let urlRequest = NSURLRequest(URL: url!)
-        
-        NSURLConnection.sendAsynchronousRequest(urlRequest, queue: self.requestQueue) { (response, data, error) in
-            
-            let resp : NSHTTPURLResponse = response as! NSHTTPURLResponse
-            
-            if (resp.statusCode == 200)
-            {
-                self.processRepositoriesFromData(data!, completion: { (repos, error) in
-                    
-                    if (error == nil)
-                    {
-                        
-                        completion(result: repos, error: nil)
-                    }
-                    else
-                    {
-                        completion(result: nil, error: error)
-                    }
-                })
-            }
-        }
-        
-    }
+    
+    
+    
+    
+    
     
     private func processPhotosFromData( data : NSData , completion : (photos : [TFPhoto]?, error : NSError?) -> Void)
     {
@@ -228,16 +324,4 @@ public class TFDataManager {
 
     }
 
-}
-
-
-extension TFDataManager {
-    
-    
-    
-    
-    
-    
-    
-    
 }

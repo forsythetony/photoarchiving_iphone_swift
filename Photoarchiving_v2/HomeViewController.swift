@@ -69,6 +69,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             {
                 self.dataMan.getRepositoriesForUser("1", completion: { (result, error) in
                     
+                    
                     if(error == nil)
                     {
                         
