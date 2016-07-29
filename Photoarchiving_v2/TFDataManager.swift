@@ -18,9 +18,9 @@ public class TFDataManager {
     
     private lazy var requestQueue = NSOperationQueue()
     
-    private let apiKey = "DXQ4kGBH9b5hoT1IMZxpqai9RosriN7WLX05DCMNNS4bM6Uy5rYvCgEtE7VXV2TG"
-    private let apiUser = "1"
-    private let apiEndpoint = "http://40.86.85.30/cs4380/api/"
+    private let apiKey = "BqJUy8qKVoSsF968NGdzgHe6R6HZtLZ5cIZKRquNOmguwnCj3PTkx7roe9oIUoN6"
+    private let apiUser = "32"
+    private let apiEndpoint = "http://13.89.34.220/photoarchiving/api/"
     
     
     init() {

@@ -12,6 +12,7 @@ class PhotoViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var mainImageView : UIImageView?
     var storiesTableView : UITableView!
+    var swipeDownGestureRecognizer : UISwipeGestureRecognizer!
     
     var photoStories : [TFStory] = [TFStory]()
     
@@ -58,6 +59,15 @@ class PhotoViewController: UIViewController, UITableViewDelegate, UITableViewDat
         {
             downloadImage(NSURL(string: phtInfo.mainURL!)!)
         }
+        
+        
+        //  Set up the gesture recognizer
+        
+        self.swipeDownGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(PhotoViewController.respondToSwipeGesture(_:)))
+        self.swipeDownGestureRecognizer.direction = .Down
+        
+        self.view.addGestureRecognizer(self.swipeDownGestureRecognizer)
+        
         
     }
     override func viewWillAppear(animated: Bool) {
@@ -190,5 +200,14 @@ class PhotoViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
+    }
+    
+    
+    func respondToSwipeGesture( gesture : UISwipeGestureRecognizer)
+    {
+        
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: { 
+            print("Nothing")
+        })
     }
 }
